@@ -6,6 +6,8 @@ import { appRoutes } from './app.routes';
 import { HelloWorldComponent } from './hello-world/hello-world.component';
 import { BrowserAnimationsModule } from '@angular/platform-browser/animations';
 import { MatSlideToggleModule } from '@angular/material/slide-toggle';
+import { DepartmentService } from '../../services/department.service';
+import { HttpClientModule } from '@angular/common/http';
 
 @NgModule({
   declarations: [AppComponent, HelloWorldComponent],
@@ -13,9 +15,10 @@ import { MatSlideToggleModule } from '@angular/material/slide-toggle';
     BrowserModule,
     RouterModule.forRoot(appRoutes, { initialNavigation: 'enabledBlocking' }),
     BrowserAnimationsModule,
-    MatSlideToggleModule
+    MatSlideToggleModule,
+    HttpClientModule
   ],
-  providers: [],
+  providers: [DepartmentService],
   bootstrap: [AppComponent],
 })
 export class AppModule {}
