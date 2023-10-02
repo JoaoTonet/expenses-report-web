@@ -6,6 +6,22 @@
   "tags": [],
   "projectType": "library",
   "targets": {
+    "build": {
+      "executor": "@nx/angular:ng-packagr-lite",
+      "outputs": ["{workspaceRoot}/dist/{projectRoot}"],
+      "options": {
+        "project": "libs/ui/master-page/ng-package.json"
+      },
+      "configurations": {
+        "production": {
+          "tsConfig": "libs/ui/master-page/tsconfig.lib.prod.json"
+        },
+        "development": {
+          "tsConfig": "libs/ui/master-page/tsconfig.lib.json"
+        }
+      },
+      "defaultConfiguration": "production"
+    },
     "test": {
       "executor": "@nx/jest:jest",
       "outputs": ["{workspaceRoot}/coverage/{projectRoot}"],
@@ -26,7 +42,8 @@
       "options": {
         "lintFilePatterns": [
           "libs/ui/master-page/**/*.ts",
-          "libs/ui/master-page/**/*.html"
+          "libs/ui/master-page/**/*.html",
+          "libs/ui/master-page/package.json"
         ]
       }
     }

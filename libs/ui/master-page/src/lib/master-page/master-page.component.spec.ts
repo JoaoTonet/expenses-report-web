@@ -7,7 +7,7 @@ describe('MasterPageComponent', () => {
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [MasterPageComponent],
+      declarations: [MasterPageComponent],
     }).compileComponents();
 
     fixture = TestBed.createComponent(MasterPageComponent);
